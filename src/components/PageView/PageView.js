@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
 import NavigationBar from '../NavigationBar/NavigationBar'
 import Logo from '../Logo/Logo'
 import Home from '../Home/Home'
-/* import About from '../About/About'
-import Skills from '../Skills/Skills' */
+import About from '../About/About'
+import Skills from '../Skills/Skills'
 import Social from '../Social/Social'
+import Projects from '../Projects/Projects'
+import Contact from '../Contact/Contact'
 
 import './PageView.css'
 
@@ -13,9 +14,9 @@ export default class PageView extends Component {
   constructor() {
     super();
       this.state = {
-        home: true,
+        home: false,
         about: false,
-        skills: false,
+        skills: true,
         portfolio: false,
         contact: false,
       }
@@ -23,16 +24,24 @@ export default class PageView extends Component {
 
   render() {
     return (
-      <Router>
         <div className="PageView">
           <Logo />
           <Social />
           <div className="container">
-            <Home />
+            {
+              this.state.home ?
+                <Home /> :
+                this.state.about ?
+                  <About /> :
+                  this.state.skills ?
+                    <Skills /> :
+                    this.state.portfolio ?
+                      <Projects /> :
+                      <Contact />
+            }
           </div>
           <NavigationBar />
         </div>
-    </Router>
     )
 
   }

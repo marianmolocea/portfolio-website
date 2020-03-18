@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
+import PageView from './components/PageView/PageView'
 
 function App() {
   return (
-    <div className="App">
-      Ian's Portfolio
-    </div>
+      <div className="App">
+        <PageView />  
+      </div>
   );
 }
 

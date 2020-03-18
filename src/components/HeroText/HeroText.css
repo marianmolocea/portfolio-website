@@ -1,0 +1,15 @@
+.HeroText {
+  color: white;
+  opacity: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.HeroText h1{
+  margin: 5px 0;
+  font-size: 3em;
+}
+
+.HeroText p {
+  font-size: 1.2em;
+}

@@ -1,0 +1,20 @@
+.Social {
+  position: absolute;
+  display: flex;
+  top: 15px;
+  right: 10vw;
+  font-size: 2em;
+}
+
+.Social ion-icon {
+  margin: 5px;
+  color: white;
+  padding: 7px;
+  opacity: 30%;
+  transition: opacity 0,2s;
+}
+
+.Social ion-icon:hover {
+  opacity: 50%;
+  cursor: pointer;
+}

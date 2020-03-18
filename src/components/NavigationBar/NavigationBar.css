@@ -1,0 +1,35 @@
+.NavigationBar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #181818;
+  overflow: hidden;
+}
+
+.NavigationBar ion-icon {
+  font-size: 2em;
+  margin: 5px;
+  color: white;
+  opacity: 40%;
+  padding: 20px 40px;
+  transition: background-color 0.2s opacity 0,2s;
+}
+
+.NavigationBar ion-icon:hover {
+  background-color: crimson;
+  opacity: 100%
+
+}
+
+.NavigationBar .line {
+  height: 30px;
+  width: 3px;
+  background-color: white;
+  opacity: 40%;
+}

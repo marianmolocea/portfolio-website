@@ -8,7 +8,7 @@ export default function NavigationBar() {
     <div className="NavigationBar">
       <Link to='/'><ion-icon name="home-outline"></ion-icon></Link>
       <Link to='/about'><ion-icon name="person-outline"></ion-icon></Link>
-      <ion-icon name="code-slash-outline"></ion-icon>
+      <Link to='/skills'><ion-icon name="code-slash-outline"></ion-icon></Link>
       <ion-icon name="tv-outline"></ion-icon>
       <ion-icon name="mail-outline"></ion-icon>
     </div>

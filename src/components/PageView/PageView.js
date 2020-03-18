@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import NavigationBar from '../NavigationBar/NavigationBar'
 import Logo from '../Logo/Logo'
@@ -9,9 +9,37 @@ import Social from '../Social/Social'
 
 import './PageView.css'
 
-export default function PageView() {
+export default class PageView extends Component {
+  constructor() {
+    super();
+      this.state = {
+        home: true,
+        about: false,
+        skills: false,
+        portfolio: false,
+        contact: false,
+      }
+  }
+
+  render() {
+    return (
+      <Router>
+        <div className="PageView">
+          <Logo />
+          <Social />
+          <div className="container">
+            <Home />
+          </div>
+          <NavigationBar />
+        </div>
+      </Router>
+    )
+  }
+}
+
+
+/* export default function PageView() {
   return (
-    <Router>
       <div className="PageView">
         <Logo />
         <Social />
@@ -22,6 +50,6 @@ export default function PageView() {
         </div>
         <NavigationBar />
       </div>
-    </Router>
+
   )
-}
+} */

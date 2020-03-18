@@ -1,25 +1,29 @@
-import React, { Component } from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
-import NavigationBar from '../NavigationBar/NavigationBar'
-import Logo from '../Logo/Logo'
-import Home from '../Home/Home'
+import React, { Component } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import NavigationBar from '../NavigationBar/NavigationBar';
+import Logo from '../Logo/Logo';
+import Home from '../Home/Home';
 /* import About from '../About/About'
 import Skills from '../Skills/Skills' */
-import Social from '../Social/Social'
+import Social from '../Social/Social';
 
-import './PageView.css'
+import './PageView.css';
 
 export default class PageView extends Component {
   constructor() {
     super();
-      this.state = {
-        home: true,
-        about: false,
-        skills: false,
-        portfolio: false,
-        contact: false,
-      }
+    this.state = {
+      home: true,
+      about: false,
+      skills: false,
+      portfolio: false,
+      contact: false
+    };
   }
+
+  changePageContent = key => {
+    return this.state[key] ? false : true;
+  };
 
   render() {
     return (
@@ -32,12 +36,10 @@ export default class PageView extends Component {
           </div>
           <NavigationBar />
         </div>
-    </Router>
-    )
-
+      </Router>
+    );
   }
 }
-
 
 /* export default function PageView() {
   return (

@@ -25,7 +25,7 @@ export default class PageView extends Component {
     return (
       <Router>
         <div className="PageView">
-         {/*  <Logo /> */}
+          <Logo />
           <Social />
           <div className="container">
             <Home />

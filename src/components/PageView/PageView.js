@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import NavigationBar from '../NavigationBar/NavigationBar'
 import Logo from '../Logo/Logo'
 import Home from '../Home/Home'
-import About from '../About/About'
-import Skills from '../Skills/Skills'
+/* import About from '../About/About'
+import Skills from '../Skills/Skills' */
 import Social from '../Social/Social'
 
 import './PageView.css'

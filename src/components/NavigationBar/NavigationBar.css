@@ -16,14 +16,14 @@
   font-size: 2em;
   margin: 5px;
   color: white;
-  opacity: 40%;
+  opacity: 0.4;
   padding: 20px 40px;
   transition: background-color 0.2s opacity 0,2s;
 }
 
 .NavigationBar ion-icon:hover {
   background-color: crimson;
-  opacity: 100%
+  opacity: 1;
 
 }
 
@@ -31,5 +31,5 @@
   height: 30px;
   width: 3px;
   background-color: white;
-  opacity: 40%;
+  opacity: 0.4;
 }

@@ -10,11 +10,11 @@
   margin: 5px;
   color: white;
   padding: 7px;
-  opacity: 30%;
+  opacity: 0.3;
   transition: opacity 0,2s;
 }
 
 .Social ion-icon:hover {
-  opacity: 50%;
+  opacity: 0.5;
   cursor: pointer;
 }

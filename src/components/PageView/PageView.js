@@ -23,7 +23,9 @@ export default class PageView extends Component {
   }
 
   changePageContent = key => {
-    return this.state[key] ? false : true;
+    return this.state[key] ? 
+      this.setState({ key: false }) : 
+      this.setState({ key: true });
   };
 
   render() {

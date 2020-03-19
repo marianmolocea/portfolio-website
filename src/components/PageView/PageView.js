@@ -22,11 +22,13 @@ export default class PageView extends Component {
     };
   }
 
-  changePageContent = key => {
-    return this.state[key] ? 
-      this.setState({ key: false }) : 
-      this.setState({ key: true });
-  };
+    changePageContent() {
+      return this.setState({ 
+        home: !this.state.home,
+        about: !this.state.about
+       })
+    };
+
 
   render() {
     return (
@@ -46,7 +48,7 @@ export default class PageView extends Component {
                       <Contact />
             }
           </div>
-          <NavigationBar />
+          <NavigationBar triggerPageContent={() => this.changePageContent()}/>
         </div>
     )
 
@@ -54,17 +56,20 @@ export default class PageView extends Component {
 }
 
 /* export default function PageView() {
+  let slag = this.props.match.params
+
   return (
+    <Router>
       <div className="PageView">
         <Logo />
         <Social />
         <div className="container">
           <Route exact to='/' component={Home} /> 
-          <Route exact to='/about' component={About} /> 
+          {slag.about || <About />} 
           <Route exact to='/skills' component={Skills} /> 
         </div>
         <NavigationBar />
       </div>
-
+    </Router>
   )
 } */

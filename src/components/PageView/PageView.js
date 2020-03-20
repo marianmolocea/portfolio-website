@@ -13,22 +13,13 @@ import './PageView.css';
 export default class PageView extends Component {
   constructor() {
     super();
-    this.state = {
-      home: true,
-      about: false,
-      skills: false,
-      portfolio: false,
-      contact: false
-    };
+    this.state = {};
   }
 
-    changePageContent() {
-      return this.setState({ 
-        home: !this.state.home,
-        about: !this.state.about
-       })
+    changePageContent(e) {
+      let key = e.target.getAttribute('value')
+      this.setState({ key })
     };
-
 
   render() {
     return (
@@ -36,40 +27,15 @@ export default class PageView extends Component {
           <Logo />
           <Social />
           <div className="container">
-            {
-              this.state.home ?
-                <Home /> :
-                this.state.about ?
-                  <About /> :
-                  this.state.skills ?
-                    <Skills /> :
-                    this.state.portfolio ?
-                      <Projects /> :
-                      <Contact />
-            }
+            {Object.keys(this.state).length === 0 && <Home />}
+            {this.state.key === 'Home' && <Home />}
+            {this.state.key === 'About' && <About />}
+            {this.state.key === 'Skills' && <Skills />}
+            {this.state.key === 'Portfolio' && <Projects />}
+            {this.state.key === 'Contact' && <Contact />}
           </div>
-          <NavigationBar triggerPageContent={() => this.changePageContent()}/>
+          <NavigationBar pageContentTrigger={(e) => this.changePageContent(e)}/>
         </div>
     )
-
   }
 }
-
-/* export default function PageView() {
-  let slag = this.props.match.params
-
-  return (
-    <Router>
-      <div className="PageView">
-        <Logo />
-        <Social />
-        <div className="container">
-          <Route exact to='/' component={Home} /> 
-          {slag.about || <About />} 
-          <Route exact to='/skills' component={Skills} /> 
-        </div>
-        <NavigationBar />
-      </div>
-    </Router>
-  )
-} */

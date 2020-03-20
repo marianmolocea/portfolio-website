@@ -12,19 +12,37 @@
   overflow: hidden;
 }
 
+.NavigationBar button {
+  border: 0;
+  background-color: #181818;
+  transition: background-color 0.2s;
+}
+
 .NavigationBar ion-icon {
   font-size: 2em;
-  margin: 5px;
   color: white;
-  opacity: 0.4;
-  padding: 20px 40px;
-  transition: background-color 0.2s opacity 0,2s;
+  padding: 30px 40px;
+  transition: color 0.2s;
 }
 
 .NavigationBar ion-icon:hover {
-  background-color: crimson;
-  opacity: 1;
+  cursor: pointer;
+  color: white;
+}
 
+.NavigationBar button:hover {
+  background-color: crimson;
+  cursor: pointer;
+}
+
+.NavigationBar button:focus {
+  outline: none;
+  border: 0;
+  background-color: crimson;
+}
+
+.NavigationBar ion-icon:focus {
+  color: white;
 }
 
 .NavigationBar .line {

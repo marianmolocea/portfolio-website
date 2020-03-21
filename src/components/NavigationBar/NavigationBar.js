@@ -3,10 +3,15 @@ import './NavigationBar.css'
 import React, { Component } from 'react'
 
 export default class NavigationBar extends Component {
+
+  activateButton(){
+    return 
+  }
+
   render() {
     return (
       <div className="NavigationBar">
-        <button onClick={this.props.pageContentTrigger} value="home">
+        <button onClick={this.props.pageContentTrigger}>
           <ion-icon name="home-outline" value="Home"></ion-icon>
         </button>
         <button onClick={this.props.pageContentTrigger}>

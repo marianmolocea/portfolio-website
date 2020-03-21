@@ -5,6 +5,7 @@ export default function Title({title}) {
   return (
     <div className="Title">
       {title.toUpperCase()}
+      <div className="line"></div>  
     </div>
   )
 }

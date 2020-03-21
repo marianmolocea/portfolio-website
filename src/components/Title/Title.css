@@ -3,3 +3,9 @@
   color: #7aeec7;
   font-weight: 700;
 }
+
+.line{
+  border-bottom: 4px double #7aeec7;
+  width: 100px;
+  margin-top: 10px;
+}

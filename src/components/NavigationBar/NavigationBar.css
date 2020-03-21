@@ -35,7 +35,8 @@
   cursor: pointer;
 }
 
-.NavigationBar button:focus {
+.NavigationBar button:focus,
+.NavigationBar button:target{
   outline: none;
   border: 0;
   background-color: crimson;

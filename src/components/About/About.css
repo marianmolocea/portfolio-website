@@ -1,5 +1,27 @@
+.About {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
 .About p{
   width: 500px;
   color: white;
   opacity: 0.9;
+}
+
+.right-side img {
+  width: 60vh;
+  animation-name: image-slide;
+  animation-duration: 3s;
+}
+
+@keyframes image-slide{
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1;
+  }
 }

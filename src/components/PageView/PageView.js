@@ -17,8 +17,8 @@ export default class PageView extends Component {
   }
 
     changePageContent(e) {
-      let key = e.target.getAttribute('value')
-      this.setState({ key })
+      let value = e.target.getAttribute('value')
+      this.setState({ value })
     };
 
   render() {
@@ -27,12 +27,12 @@ export default class PageView extends Component {
           <Logo />
           <Social />
           <div className="container">
-            {Object.keys(this.state).length === 0 && <Home />}
-            {this.state.key === 'Home' && <Home />}
-            {this.state.key === 'About' && <About />}
-            {this.state.key === 'Skills' && <Skills />}
-            {this.state.key === 'Portfolio' && <Projects />}
-            {this.state.key === 'Contact' && <Contact />}
+            {Object.values(this.state).length === 0 && <Home />}
+            {this.state.value === 'Home' && <Home />}
+            {this.state.value === 'About' && <About />}
+            {this.state.value === 'Skills' && <Skills />}
+            {this.state.value === 'Portfolio' && <Projects />}
+            {this.state.value === 'Contact' && <Contact />}
           </div>
           <NavigationBar pageContentTrigger={(e) => this.changePageContent(e)}/>
         </div>

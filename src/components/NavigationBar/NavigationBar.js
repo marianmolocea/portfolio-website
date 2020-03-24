@@ -3,28 +3,23 @@ import './NavigationBar.css'
 import React, { Component } from 'react'
 
 export default class NavigationBar extends Component {
-
-  activateButton(){
-    return 
-  }
-
   render() {
     return (
       <div className="NavigationBar">
-        <button onClick={this.props.pageContentTrigger}>
-          <ion-icon name="home-outline" value="Home"></ion-icon>
+        <button className="home active" onClick={this.props.pageContentTrigger}>
+          <ion-icon name="home-outline" value="home"></ion-icon>
         </button>
-        <button onClick={this.props.pageContentTrigger}>
-          <ion-icon name="person-outline" value="About"></ion-icon>
+        <button className="about" onClick={this.props.pageContentTrigger}>
+          <ion-icon name="person-outline" value="about"></ion-icon>
         </button>
-        <button onClick={this.props.pageContentTrigger}>
-          <ion-icon name="code-slash-outline" value="Skills"></ion-icon>
+        <button className="skills" onClick={this.props.pageContentTrigger}>
+          <ion-icon name="code-slash-outline" value="skills"></ion-icon>
         </button>
-        <button onClick={this.props.pageContentTrigger}>
-          <ion-icon name="tv-outline" value="Portfolio"></ion-icon>
+        <button className="portfolio" onClick={this.props.pageContentTrigger}>
+          <ion-icon name="tv-outline" value="portfolio"></ion-icon>
         </button>
-        <button onClick={this.props.pageContentTrigger}>
-          <ion-icon name="mail-outline" value="Contact"></ion-icon>
+        <button className="contact" onClick={this.props.pageContentTrigger}>
+          <ion-icon name="mail-outline" value="contact"></ion-icon>
         </button>
       </div>
     )

@@ -52,3 +52,7 @@
   background-color: white;
   opacity: 0.4;
 }
+
+.NavigationBar .active{
+  background-color: crimson;
+}

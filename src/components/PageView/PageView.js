@@ -17,25 +17,38 @@ export default class PageView extends Component {
   }
 
     changePageContent(e) {
-      let value = e.target.getAttribute('value')
-      this.setState({ value })
+      let value = e.target.getAttribute('value');
+      let element = document.querySelector(`.${value}`)
+      let classNames = element.getAttribute('class');
+      let child = document.querySelector('.NavigationBar').childNodes
+      child.forEach(el => {
+        if(el.getAttribute('class').includes('active') && (el !== classNames)){
+          el.classList.remove('active')
+        }
+      })
+      if(!classNames.includes('active')){
+        element.classList.add('active');   
+      } 
+      this.setState({ value });
     };
 
   render() {
     return (
-        <div className="PageView">
-          <Logo />
-          <Social />
-          <div className="container">
-            {Object.values(this.state).length === 0 && <Home />}
-            {this.state.value === 'Home' && <Home />}
-            {this.state.value === 'About' && <About />}
-            {this.state.value === 'Skills' && <Skills />}
-            {this.state.value === 'Portfolio' && <Projects />}
-            {this.state.value === 'Contact' && <Contact />}
-          </div>
-          <NavigationBar pageContentTrigger={(e) => this.changePageContent(e)}/>
+      <div className="PageView">
+        <Logo />
+        <Social />
+        <div className="container">
+          {Object.values(this.state).length === 0 && <Home />}
+          {this.state.value === 'home' && <Home />}
+          {this.state.value === 'about' && <About />}
+          {this.state.value === 'skills' && <Skills />}
+          {this.state.value === 'portfolio' && <Projects />}
+          {this.state.value === 'contact' && <Contact />}
         </div>
+        <NavigationBar 
+          pageContentTrigger={(e) => this.changePageContent(e)}
+        />
+      </div>
     )
   }
 }

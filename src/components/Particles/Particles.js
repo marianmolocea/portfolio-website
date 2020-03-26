@@ -9,7 +9,7 @@ export default function ParticlesEffect() {
         params={{
           particles: {
             number: {
-              value: 75
+              value: 90
             },
             size: {
               value: 3
@@ -28,7 +28,7 @@ export default function ParticlesEffect() {
             events: {
               onhover: {
                 enable: true,
-                mode: 'repulse'
+                mode: 'grab'
               }
             }
           }

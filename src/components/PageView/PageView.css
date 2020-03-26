@@ -1,6 +1,6 @@
 .PageView {
   height: 100%;
-  width: calc(100vw - 100px);
+  width: calc(100vw - 150px);
   display: flex;
   align-items: center;
   justify-content: center;

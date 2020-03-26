@@ -4,55 +4,14 @@
   right: 0;
   display: flex;
   flex-direction: column;
-  width: 100px;
-  align-items: center;
+  width: 150px;
   justify-content: center;
+
   height: 100vh;
   background-color: #181818;
   overflow: hidden;
 }
 
-.NavigationBar button {
-  border: 0;
-  background-color: #181818;
-  transition: background-color 0.2s;
-}
-
-.NavigationBar ion-icon {
-  font-size: 2em;
-  color: white;
-  padding: 30px 40px;
-  transition: color 0.2s;
-}
-
-.NavigationBar ion-icon:hover {
-  cursor: pointer;
-  color: white;
-}
-
-.NavigationBar button:hover {
-  background-color: crimson;
-  cursor: pointer;
-}
-
-.NavigationBar button:focus,
-.NavigationBar button:target{
-  outline: none;
-  border: 0;
-  background-color: crimson;
-}
-
-.NavigationBar ion-icon:focus {
-  color: white;
-}
-
-.NavigationBar .line {
-  height: 30px;
-  width: 3px;
-  background-color: white;
-  opacity: 0.4;
-}
-
-.NavigationBar .active{
+.NavigationBar a:focus{
   background-color: crimson;
 }

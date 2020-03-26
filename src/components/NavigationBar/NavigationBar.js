@@ -1,26 +1,29 @@
 import './NavigationBar.css'
-
+import NavButton from './NavButton/NavButton'
 import React, { Component } from 'react'
 
 export default class NavigationBar extends Component {
+  constructor(){
+    super();
+    this.state = [
+      {name: 'home', icon: 'home-outline'},
+      {name: 'about', icon: 'person-outline'},
+      {name: 'skills', icon: 'code-slash-outline'},
+      {name: 'portfolio', icon: 'tv-outline'},
+      {name: 'contact', icon: 'mail-outline'}
+    ]    
+  }
+
   render() {
     return (
       <div className="NavigationBar">
-        <button className="home active" onClick={this.props.pageContentTrigger}>
-          <ion-icon name="home-outline" value="home"></ion-icon>
-        </button>
-        <button className="about" onClick={this.props.pageContentTrigger}>
-          <ion-icon name="person-outline" value="about"></ion-icon>
-        </button>
-        <button className="skills" onClick={this.props.pageContentTrigger}>
-          <ion-icon name="code-slash-outline" value="skills"></ion-icon>
-        </button>
-        <button className="portfolio" onClick={this.props.pageContentTrigger}>
-          <ion-icon name="tv-outline" value="portfolio"></ion-icon>
-        </button>
-        <button className="contact" onClick={this.props.pageContentTrigger}>
-          <ion-icon name="mail-outline" value="contact"></ion-icon>
-        </button>
+          {this.state.map(button => 
+            <NavButton 
+              name={button.name}
+              icon={button.icon}
+              hey={button.name}
+            />
+          )}
       </div>
     )
   }

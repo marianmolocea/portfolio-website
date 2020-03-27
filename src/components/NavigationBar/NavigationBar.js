@@ -9,7 +9,7 @@ export default class NavigationBar extends Component {
       {name: 'home', icon: 'home-outline'},
       {name: 'about', icon: 'person-outline'},
       {name: 'skills', icon: 'code-slash-outline'},
-      {name: 'portfolio', icon: 'tv-outline'},
+      {name: 'projects', icon: 'tv-outline'},
       {name: 'contact', icon: 'mail-outline'}
     ]    
   }

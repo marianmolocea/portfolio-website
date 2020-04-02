@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 .PageView {
   height: 100%;
   width: calc(100vw - 150px);

@@ -1,5 +1,53 @@
-.Contact p{
-  width: 500px;
-  color: white;
-  opacity: 0.9;
+.Contact-form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.Contact-form input,
+.Contact-form textarea {
+  padding: 10px;
+  font-size: 1.2em;
+  color: #ddd;
+  border: none;
+  border-bottom: 2px solid crimson;
+  border-left: 2px solid crimson;
+  background-color: transparent;
+}
+
+
+.Contact-form input {
+  width: 65%;
+  margin-bottom: 20px;
+}
+
+.Contact-form textarea {
+  width: 85%;
+  height: 150px;
+  min-height: 20px;
+  max-height: 150px;
+  margin-bottom: 20px;
+  resize: none;
+}
+
+.Contact-form input:focus,
+.Contact-form textarea:focus,
+.Contact-form button {
+  outline: none;
+}
+
+.Contact-form button {
+  width: 150px;
+  padding: 5px;
+  font-size: 1.2em;
+  background-color: crimson;
+  border: 0;
+  color: #ddd;
+  border-radius: 50px;
+  justify-self: flex-end;
+}
+
+.Contact-form button:hover {
+  cursor: pointer;
 }

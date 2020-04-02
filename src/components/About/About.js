@@ -6,14 +6,14 @@ import ian from '../../images/Ian.jpg'
 
 export default function About() {
   return (
-    <div className="About">
+    <>
       <div className="left-side">
         <Title title="About Me" />
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, excepturi? Corporis nostrum, unde doloribus, optio enim voluptatem dolorem molestias quia fugiat nulla, dicta voluptates? Molestias provident amet in quos esse.</p>
+        <p className="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, excepturi? Corporis nostrum, unde doloribus, optio enim voluptatem dolorem molestias quia fugiat nulla, dicta voluptates? Molestias provident amet in quos esse.</p>
       </div>
       <div className="right-side">
         <img className="profile-image animated forward fadeInRight" src={ian} alt="Marian Molocea" />
       </div>
-    </div>
+    </>
   )
 }

@@ -1,5 +1,15 @@
-.Skills p{
-  width: 500px;
+.Skills.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  justify-items: center;
+}
+
+.skills-icons {
+  height: 17vh;
   color: white;
-  opacity: 0.9;
+}
+
+.skills-icons:hover {
+  transform: rotate(-20deg)
 }

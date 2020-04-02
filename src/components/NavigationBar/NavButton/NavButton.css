@@ -33,5 +33,8 @@
   background-color: crimson;
 }
 
+.NavButton .active {
+  background-color: cyan;
+}
 
 

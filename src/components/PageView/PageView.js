@@ -9,6 +9,7 @@ import Skills from '../Skills/Skills'
 import Social from '../Social/Social'
 import Projects from '../Projects/Projects'
 import Contact from '../Contact/Contact'
+import ThankYou from '../ThankYou/ThankYou'
 
 import './PageView.css';
 
@@ -23,6 +24,7 @@ export default function PageView() {
         <Route exact path="/skills" component={Skills}></Route>
         <Route exact path="/projects" component={Projects}></Route>
         <Route exact path="/contact" component={Contact}></Route>
+        <Route exact path="/thank-you" component={ThankYou}></Route>
       </div>
       <NavigationBar />
     </div>

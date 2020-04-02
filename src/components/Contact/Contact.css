@@ -1,8 +1,8 @@
 .Contact-form {
   display: flex;
   flex-direction: column;
-  align-content: center;
-  justify-content: center;
+  padding-left: 50px;
+  animation-duration: 1s;
 }
 
 .Contact-form input,
@@ -14,6 +14,7 @@
   border-bottom: 2px solid crimson;
   border-left: 2px solid crimson;
   background-color: transparent;
+  border-radius: 0 0 0 5px;
 }
 
 
@@ -46,8 +47,10 @@
   color: #ddd;
   border-radius: 50px;
   justify-self: flex-end;
+  transition: background-color 0.2s;
 }
 
 .Contact-form button:hover {
   cursor: pointer;
+  background-color: hsla(348, 83%, 47%, 0.9);
 }

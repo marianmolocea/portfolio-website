@@ -10,7 +10,7 @@ export default function Contact() {
         <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim rem suscipit in, iusto nam, eius quaerat dolorum ex officia est at, sint quisquam ad commodi perspiciatis consectetur repellat nostrum excepturi?</p>
       </div>
       <div className="right-side">
-        <form className="Contact-form" action="https://submit-form.com/iaCuGnpz2kraTRI8J6lWy" target="blank">
+        <form className="Contact-form animated forward fadeInRight" action="https://submit-form.com/iaCuGnpz2kraTRI8J6lWy" target="blank">
 {/*           <input
             type="hidden"
             name="_redirect"

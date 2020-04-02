@@ -2,7 +2,7 @@ import React from 'react'
 import {Route} from 'react-router-dom'
 
 import NavigationBar from '../NavigationBar/NavigationBar'
-import Logo from '../Logo/Logo'
+import Logo from './Logo/Logo'
 import Home from '../Home/Home'
 import About from '../About/About'
 import Skills from '../Skills/Skills'

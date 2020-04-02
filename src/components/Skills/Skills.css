@@ -5,11 +5,8 @@
   justify-items: center;
 }
 
-.skills-icons {
+.Skills .skills-icons {
   height: 17vh;
   color: white;
-}
-
-.skills-icons:hover {
-  transform: rotate(-20deg)
+  animation-duration: 1.2s
 }

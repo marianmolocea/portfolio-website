@@ -13,11 +13,10 @@ export default function Skills() {
       </div>
       <div className="right-side">
         <div className="Skills grid">
-          {console.log(images())}
           {
             mySkills
               .map(skill => (
-                <img className="skills-icons" src={images()[skill]} />
+                <img className="skills-icons animated forward jackInTheBox" src={images()[skill]} />
               ))
           }
         </div>

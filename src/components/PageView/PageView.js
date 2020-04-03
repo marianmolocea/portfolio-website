@@ -20,6 +20,7 @@ export default function PageView() {
       <Social />
       <div className="container">
         <Route exact path="/" component={Home}></Route>
+        <Route exact path="/home" component={Home}></Route>
         <Route exact path="/about" component={About}></Route>
         <Route exact path="/skills" component={Skills}></Route>
         <Route exact path="/projects" component={Projects}></Route>

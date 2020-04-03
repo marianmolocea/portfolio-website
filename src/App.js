@@ -5,7 +5,7 @@ import PageView from './components/PageView/PageView'
 
 function App() {
   return (
-    <Router>
+    <Router >
       <div className="App">
         <PageView />  
       </div>

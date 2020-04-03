@@ -7,7 +7,7 @@
 }
 
 .NavButton:hover {
-  background-color: crimson;
+  background-color: #333;
   cursor: pointer;
 }
 
@@ -29,12 +29,12 @@
   color: #ddd;
 }
 
-.NavButton .item-name:active {
-  background-color: crimson;
+.NavButton .item-name {
+  color: #ddd;
 }
 
-.NavButton .active {
-  background-color: cyan;
+.active, .active .NavButton:hover {
+  background-color: crimson;
 }
 
 

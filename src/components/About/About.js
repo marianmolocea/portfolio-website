@@ -8,7 +8,7 @@ export default function About() {
   return (
     <>
       <div className="left-side">
-        <Title title="About Me" />
+        <Title title="About Me" line='line'/>
         <p className="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, excepturi? Corporis nostrum, unde doloribus, optio enim voluptatem dolorem molestias quia fugiat nulla, dicta voluptates? Molestias provident amet in quos esse.</p>
       </div>
       <div className="right-side">

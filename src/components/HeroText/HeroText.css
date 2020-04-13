@@ -11,6 +11,10 @@
   font-size: 3em;
 }
 
+.HeroText .homeText {
+  border: 0;
+}
+
 .HeroText p {
   font-size: 1.2em;
 }

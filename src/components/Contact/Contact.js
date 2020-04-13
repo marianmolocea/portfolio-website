@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <>
       <div className="left-side">
-        <Title title="contact me" />
+        <Title title="contact me" line='line' />
         <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim rem suscipit in, iusto nam, eius quaerat dolorum ex officia est at, sint quisquam ad commodi perspiciatis consectetur repellat nostrum excepturi?</p>
       </div>
       <div className="right-side">

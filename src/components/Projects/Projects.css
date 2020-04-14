@@ -1,5 +1,6 @@
-.Projects p{
-  width: 500px;
-  color: white;
-  opacity: 0.9;
+.Projects.grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

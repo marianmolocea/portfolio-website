@@ -7,6 +7,7 @@ export default function Project({img, link}) {
     <div className='Project'>
       <a target='_blank' href={link}>
         <img src={img} />
+        
       </a>
     </div>
   )

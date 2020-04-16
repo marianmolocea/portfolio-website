@@ -19,15 +19,15 @@ export default function PageView() {
       <Logo />
       <Social />
       <div className="container">
-        <Route exact path="/" component={Home}></Route>
-        <Route exact path="/home" component={Home}></Route>
-        <Route exact path="/about" component={About}></Route>
-        <Route exact path="/skills" component={Skills}></Route>
-        <Route exact path="/projects" component={Projects}></Route>
-        <Route exact path="/contact" component={Contact}></Route>
-        <Route exact path="/thank-you" component={ThankYou}></Route>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/skills" component={Skills} />
+        <Route exact path="/projects" component={Projects} />
+        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/thank-you" component={ThankYou} />
       </div>
-      <Route exact path="/:slug" component={NavigationBar}></Route>
+      <Route path="/" component={NavigationBar} />
     </div>
   )
 }

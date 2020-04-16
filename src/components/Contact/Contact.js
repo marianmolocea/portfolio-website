@@ -1,13 +1,19 @@
 import React from 'react'
 import Title from '../Title/Title'
 import './Contact.css'
+import {Link} from 'react-router-dom'
+import {IoMdAt} from 'react-icons/io'
 
 export default function Contact() {
   return (
     <>
       <div className="left-side">
         <Title title="contact me" line='line' />
-        <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim rem suscipit in, iusto nam, eius quaerat dolorum ex officia est at, sint quisquam ad commodi perspiciatis consectetur repellat nostrum excepturi?</p>
+        <p className="description">Please use on of the following methods to contact me and I will get back to you as soon as possible.</p>
+        <div className="ctaButtons">
+          <Link to='' className='linkBtn'> GitHub</Link>
+          <Link to='' className='linkBtn'> LinkedIn</Link>
+        </div>
       </div>
       <div className="right-side">
         <form className="Contact-form animated forward fadeInRight" action="https://submit-form.com/iaCuGnpz2kraTRI8J6lWy" target="blank">

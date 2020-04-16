@@ -22,6 +22,7 @@ export default class NavigationBar extends Component {
       <div className="NavigationBar">
           {this.state.pages.map(button =>
               <NavButton 
+                key={button.name}
                 name={button.name}
                 icon={button.icon}
               />

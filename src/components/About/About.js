@@ -8,7 +8,7 @@ export default function About() {
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
-  useEffect(() => window.addEventListener('resize', () => setWindowWidth(window.innerWidth)), [window.innerWidth])
+  useEffect(() => window.addEventListener('resize', () => setWindowWidth(window.innerWidth)), [])
 
   return (
     <>

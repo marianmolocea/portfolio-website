@@ -7,7 +7,7 @@ function App() {
   return (
     <Router >
       <div className="App">
-        <PageView />  
+        <PageView /> 
       </div>
     </Router>
   );

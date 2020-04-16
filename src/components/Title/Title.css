@@ -10,3 +10,9 @@
   width: 100px;
   margin-top: 10px;
 }
+
+@media all and (max-width: 991px) { 
+  .Title {
+    font-size: 2em;
+  }
+} 

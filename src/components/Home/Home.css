@@ -1,0 +1,12 @@
+@media all and (max-width: 768px) {
+  .Home {
+    height: calc(100vh - 200px);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-right: 50px;
+  }
+}
+
+
+

@@ -27,7 +27,7 @@ export default function PageView() {
         <Route exact path="/contact" component={Contact}></Route>
         <Route exact path="/thank-you" component={ThankYou}></Route>
       </div>
-      <NavigationBar />
+      <Route exact path="/:slug" component={NavigationBar}></Route>
     </div>
   )
 }

@@ -10,3 +10,13 @@
   color: white;
   animation-duration: 1.2s
 }
+
+@media all and (max-width: 575px) {
+  .Skills .skills-icons {
+    height: 70px;
+  }
+
+  .Skills.grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

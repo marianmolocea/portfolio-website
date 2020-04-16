@@ -1,7 +1,21 @@
 .Particles {
   position: absolute;
   top: 0;
-  height: 100vh;
-  width: 100vw;
   overflow: hidden;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+@media all and (max-width: 768px) {
+  .Particles {
+    height: calc(100vh - 80px);
+    opacity: 0.5;
+  }
+}
+
+@media all and (max-width: 575px) {
+  .Particles {
+    opacity: 0.25;
+  }
 }

@@ -4,8 +4,9 @@ import './Particles.css'
 
 export default function ParticlesEffect() {
   return (
-    <div className="Particles">
       <Particles
+        canvasClassName='canvas'
+        className="Particles"
         params={{
           particles: {
             number: {
@@ -34,6 +35,5 @@ export default function ParticlesEffect() {
           }
         }}
       />
-    </div>
   );
 }

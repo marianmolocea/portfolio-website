@@ -17,3 +17,16 @@ a:hover, a:visited, a:link, a:active
 textarea {
   font-family: 'Roboto', sans-serif;
 }
+
+@media all and (max-width: 768px) {
+  .App {
+    min-height: 100vh;
+    height: 100%;
+  }
+}
+
+@media all and (max-width: 575px) {
+  .App {
+    font-size: 14px;
+  }
+}

@@ -2,7 +2,7 @@
   position: absolute;
   display: flex;
   top: 15px;
-  right: 12vw;
+  right: 200px;
   font-size: 2em;
   z-index: 2;
 }
@@ -19,4 +19,10 @@
   color: #7AEEC7;
   opacity: 1;
   cursor: pointer;
+}
+
+@media all and (max-width: 768px) {
+  .Social {
+    right: 35px;
+  }
 }

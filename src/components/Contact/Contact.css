@@ -1,7 +1,6 @@
 .Contact-form {
   display: flex;
   flex-direction: column;
-  padding-left: 50px;
   animation-duration: 1s;
 }
 
@@ -19,12 +18,11 @@
 
 
 .Contact-form input {
-  width: 65%;
+  width: 85%;
   margin-bottom: 20px;
 }
 
 .Contact-form textarea {
-  width: 85%;
   height: 150px;
   min-height: 20px;
   max-height: 150px;

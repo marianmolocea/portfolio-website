@@ -29,5 +29,5 @@ export default function PageView() {
       </div>
       <Route path="/" component={NavigationBar} />
     </div>
-  )
+  );
 }

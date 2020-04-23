@@ -12,10 +12,28 @@
 a:hover, a:visited, a:link, a:active
 {
     text-decoration: none;
+    color: #ddd;
 }
 
 textarea {
   font-family: 'Roboto', sans-serif;
+}
+
+button:focus {
+  outline: none;
+}
+
+.ctaButtons {
+  margin-top: 20px;
+}
+
+.linkBtn {
+  position: relative;
+  padding: 8px 40px;
+  margin-right: 20px;
+  color: #ddd;
+  border: 1.5px solid #7aeec7;
+  border-radius: 100px;
 }
 
 @media all and (max-width: 768px) {
@@ -28,5 +46,17 @@ textarea {
 @media all and (max-width: 575px) {
   .App {
     font-size: 14px;
+  }
+
+  .ctaButtons {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .linkBtn {
+    width: 100%;
+    margin-bottom: 15px;
+    margin-right: 0;
   }
 }

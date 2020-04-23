@@ -1,13 +1,17 @@
 import React from 'react'
 import Title from '../Title/Title'
-import Project from './Project/Project'
 import './Projects.css'
-import kodflix from '../../images/project-images/kodflix.png'
-import beachResort from '../../images/project-images/beachResort.png'
-import forkify from '../../images/project-images/forkify.png'
-import liveChat from '../../images/project-images/liveChat.png'
+import PopUpProject from './PopUpProject/PopUpProject'
+import projectsData from './projectsData'
+import { useState } from 'react'
 
 export default function Projects() {
+
+  let [isOpened, setIsOpened] = useState(false);
+  let [itemIndex, setItemIndex] = useState(0)
+
+  const handleClose = () =>setIsOpened(false)
+
   return (
     <>
       <div className="left-side">
@@ -16,10 +20,33 @@ export default function Projects() {
       </div>
       <div className="right-side">
         <div className="Projects grid">
-          <Project img={kodflix} link='https://kodflix-ian.netlify.com/'/>
-          <Project img={beachResort} link='https://resort-react-app-mm.netlify.com/'/>
-          <Project img={liveChat} link='https://live-chat-react-app-mm.netlify.com/'/>
-          <Project img={forkify} link='https://forkify-recipe-js-app-mm.netlify.com/'/>
+          {
+            projectsData.map((project, index) => (
+              <button
+                key={project.title}
+                className={`project-btn ${index % 2 ? 'first' : 'second'}`}
+                onClick={() => {
+                  setIsOpened(true);
+                  setItemIndex(index)
+                }}
+              >
+                {project.title}
+              </button>
+            ))
+          }
+        
+          {
+            isOpened && 
+            <PopUpProject 
+              handleClose={handleClose}
+              img={projectsData[itemIndex].img}
+              title={projectsData[itemIndex].title}
+              stack={projectsData[itemIndex].stack.join(', ')}
+              description={projectsData[itemIndex].description}
+              liveUrl={projectsData[itemIndex].liveUrl}
+              gitUrl={projectsData[itemIndex].gitUrl}
+            />
+          }
         </div>
       </div>
     </>

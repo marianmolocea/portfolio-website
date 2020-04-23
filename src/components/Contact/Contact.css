@@ -53,15 +53,33 @@
   background-color: #db143ce6;
 }
 
-.ctaButtons {
-  margin-top: 20px;
+.twoBtn {
+  width: 300px;
+  color: #ddd;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 36px;
 }
 
-.linkBtn {
-  position: relative;
-  padding: 8px 40px;
-  margin-right: 20px;
-  color: #ddd;
-  border: 1px solid #7aeec7;
-  border-radius: 100px;
+.copyBtn {
+  background-color: #7aeec7;
+  height: 34px;
+  border: none;
+  position: absolute;
+  right: 0;
+  width: 50px;
+  border-radius: 15px 0 0 15px;
+  cursor: pointer;
+  color: #333;
+  font-size: 1em;
+  transform: rotateY(180deg)
+}
+
+@media all and (max-width: 575px) {
+  .twoBtn {
+    width: 100%;
+    margin-bottom: 0;
+  }
 }

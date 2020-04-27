@@ -19,7 +19,13 @@
 
 .description {
   color: white;
-  opacity: 0.9;
+  opacity: 0.8;
+  line-height: 24px;
+}
+
+.description span {
+  color: #7aeec7;
+  font-weight: 800;
 }
 
 .left-side {

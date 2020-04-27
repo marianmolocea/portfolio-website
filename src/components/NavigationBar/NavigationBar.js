@@ -12,8 +12,7 @@ export default class NavigationBar extends Component {
         {name: 'skills', icon: 'code-slash-outline'},
         {name: 'projects', icon: 'tv-outline'},
         {name: 'contact', icon: 'mail-outline'}
-      ],
-      activePage: ''
+      ]
     }
   }
   

@@ -16,7 +16,7 @@ const projectsData = [
     img: beachResort,
     title: 'Beach Resort',
     stack: ['JavaScript', 'React', 'CSS', 'Heroku', 'Node.JS'],
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae corrupti perspiciatis sit qui expedita, magnam magni eum optio? Fugiat laborum sed odit sit totam, tempora aliquid nobis dolorem possimus odio!',
+    description: 'This project is built as part of an online course with React Js, JavaScript and CSS. The application wants to simulate a resort booking website where the users can filter the rooms they want.',
     liveUrl: 'https://resort-react-app-mm.netlify.com/',
     gitUrl: 'https://github.com/marianmolocea/resort-react-app',
   },
@@ -32,7 +32,7 @@ const projectsData = [
     img: forkify,
     title: 'Forkify',
     stack: ['JavaScript', 'HTML', 'CSS'],
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae corrupti perspiciatis sit qui expedita, magnam magni eum optio? Fugiat laborum sed odit sit totam, tempora aliquid nobis dolorem possimus odio!',
+    description: 'Forkify is an application built with HTML, CSS and JavaScript. This project is built as part of an online course and utilise the API and the local storage of the browser. The user can use this application to search for the recipe they want and add the ingredients to the shopping list. ',
     liveUrl: 'https://forkify-recipe-js-app-mm.netlify.com/',
     gitUrl: 'https://github.com/marianmolocea/Forkify-JS-Recipe-App',
   }

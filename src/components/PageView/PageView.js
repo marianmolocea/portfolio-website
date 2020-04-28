@@ -10,6 +10,7 @@ import Social from '../Social/Social'
 import Projects from '../Projects/Projects'
 import Contact from '../Contact/Contact'
 import ThankYou from '../ThankYou/ThankYou'
+import ParticlesEffect from '../Particles/Particles'
 
 import './PageView.css';
 
@@ -26,6 +27,7 @@ export default function PageView() {
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/thank-you" component={ThankYou} />
       </div>
+      <Route exact path="/" component={ParticlesEffect} />
       <Route path="/" component={NavigationBar} />
     </div>
   );

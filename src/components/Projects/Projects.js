@@ -16,7 +16,7 @@ export default function Projects() {
     <>
       <div className="left-side">
         <Title title="projects" line='line' />
-        <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae corrupti perspiciatis sit qui expedita, magnam magni eum optio? Fugiat laborum sed odit sit totam, tempora aliquid nobis dolorem possimus odio!</p>
+        <p className="description">During my journey as a web developer, I built a couple of projects. Although the main functionalities of these projects are implemented, still more improvements can be done. In time I will update the projects to reflect my latest knowledge about the technologies I work with.</p>
       </div>
       <div className="right-side">
         <div className="Projects grid">

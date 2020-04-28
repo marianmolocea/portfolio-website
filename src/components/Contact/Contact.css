@@ -4,6 +4,10 @@
   animation-duration: 1s;
 }
 
+.honeypot {
+  display: none;
+}
+
 .Contact-form input,
 .Contact-form textarea {
   padding: 10px;

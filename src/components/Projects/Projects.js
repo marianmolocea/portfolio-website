@@ -41,7 +41,7 @@ export default function Projects() {
               handleClose={handleClose}
               img={projectsData[itemIndex].img}
               title={projectsData[itemIndex].title}
-              stack={projectsData[itemIndex].stack.join(', ')}
+              stack={projectsData[itemIndex].stack}
               description={projectsData[itemIndex].description}
               liveUrl={projectsData[itemIndex].liveUrl}
               gitUrl={projectsData[itemIndex].gitUrl}

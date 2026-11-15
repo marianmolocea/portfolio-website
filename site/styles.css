@@ -187,8 +187,8 @@ ul { list-style: none; }
   white-space: pre;
   overflow: hidden;
 }
-/* Phones: the coloured segments don't fit, so the line is just the arrow and the command. */
-@media (max-width: 699px) { .input .ps1 { display: none; } }
+/* Phones: the coloured segments don't fit, so every prompt is just the arrow and the command. */
+@media (max-width: 699px) { .ps1 { display: none; } }
 .caret {
   display: inline-block;
   width: .6em; height: 1.25em;

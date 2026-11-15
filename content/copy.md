@@ -6,11 +6,11 @@
 
 Fullstack software engineer
 
-Hi, I'm Marian. I build software end to end, from the screen you click to the servers behind it.
+I build the software that controls simulation models, from the screen you click to the servers behind it.
 
 ## 2. About
 
-I've been building software for six years. I work across the whole stack: React and JavaScript on the front end, Go on the back end, and Kubernetes and AWS underneath.
+I've been building software for six years. I use React and JavaScript on the front end, Go on the back end, and Kubernetes and AWS underneath.
 
 These days I work closely with a team that builds simulation models. They build the models. I build the software people use to set up, run and control them.
 
@@ -20,7 +20,7 @@ These days I work closely with a team that builds simulation models. They build 
 I build whole applications from scratch. Then I connect them to the systems the company already runs on.
 
 **Software for simulation models**
-I work side by side with the model team. Together we make the tools that set up, run and control their simulation models.
+I work side by side with the model team. When they need a new tool for their models, I build it.
 
 **Faster, lighter apps**
 I find what slows a large app down and fix it, so it runs quicker and uses less. Same app, less waiting.

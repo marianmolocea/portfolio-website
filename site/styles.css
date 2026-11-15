@@ -24,14 +24,14 @@
     color-scheme: dark;
     --bg: #141312; --surface: #1D1C1A; --text: #EDEAE3; --muted: #A3A098;
     --accent: #FF5A47; --accent-text: #FF7B6B; --line: #2E2C29;
-    --field-ink: 237, 234, 227; --field-ink-a: .10; --field-red: 255, 90, 71; --photo: brightness(.85);
+    --field-ink: 237, 234, 227; --field-ink-a: .10; --field-red: 255, 90, 71;
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
   --bg: #141312; --surface: #1D1C1A; --text: #EDEAE3; --muted: #A3A098;
   --accent: #FF5A47; --accent-text: #FF7B6B; --line: #2E2C29;
-  --field-ink: 237, 234, 227; --field-ink-a: .10; --field-red: 255, 90, 71; --photo: brightness(.85);
+  --field-ink: 237, 234, 227; --field-ink-a: .10; --field-red: 255, 90, 71;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -169,7 +169,7 @@ h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; line-height: 1.15; l
 
 .about { display: grid; gap: var(--s5); align-items: start; }
 @media (min-width: 900px) { .about { grid-template-columns: 1fr 280px; gap: var(--s6); } }
-.portrait { display: block; width: 240px; max-width: 100%; height: auto; border: 1px solid var(--text); filter: var(--photo, none); }
+.portrait { display: block; width: 240px; max-width: 100%; height: auto; border: 1px solid var(--text); }
 @media (min-width: 900px) { .portrait { width: 280px; } }
 
 .work { display: grid; gap: var(--s5); }

@@ -197,6 +197,25 @@ ul { list-style: none; }
 .input.typing .caret { animation: none; }
 @keyframes blink { 50% { opacity: 0; } }
 
+/* Corner handle for resizing the window: wide screens with a mouse only, shown by the script. */
+.grip { display: none; }
+@media (min-width: 900px) and (pointer: fine) {
+  .grip:not([hidden]) {
+    display: block;
+    position: fixed;
+    z-index: 13;
+    top: calc(var(--top) + var(--H) - 18px);
+    left: calc(50% + var(--W) / 2 - 18px);
+    width: 18px; height: 18px;
+    cursor: nwse-resize;
+    touch-action: none;
+    color: var(--muted);
+    background: linear-gradient(135deg, transparent 0 55%, currentColor 55% 61%, transparent 61% 72%, currentColor 72% 78%, transparent 78%);
+    transition: color 150ms var(--ease);
+  }
+  .grip:hover, .grip.dragging { color: var(--accent); }
+}
+
 /* ---------- scrolling content ---------- */
 .screen {
   width: var(--W);

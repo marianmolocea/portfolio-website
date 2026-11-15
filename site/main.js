@@ -27,6 +27,54 @@
   }
   syncTheme();
 
+  // Corner handle: drag to resize the window. It stays centred, so both edges
+  // move; the line at the top of the window stays put. Double-click resets.
+  const grip = document.querySelector('.grip');
+  const frame = document.querySelector('.frame');
+  if (grip && frame) {
+    grip.hidden = false;
+    let start = null;
+    grip.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      grip.setPointerCapture(e.pointerId);
+      grip.classList.add('dragging');
+      const box = frame.getBoundingClientRect();
+      const css = getComputedStyle(root);
+      const anchor = document.elementFromPoint(
+        box.left + parseFloat(css.getPropertyValue('--inner')) + 4,
+        box.top + parseFloat(css.getPropertyValue('--title-h')) + 8);
+      start = {
+        x: e.clientX, y: e.clientY, w: box.width, h: box.height, anchor,
+        offset: anchor ? anchor.getBoundingClientRect().top - box.top : 0,
+      };
+    });
+    grip.addEventListener('pointermove', (e) => {
+      if (!start) return;
+      const w = Math.max(700, start.w + 2 * (e.clientX - start.x));
+      const h = Math.max(520, start.h + 2 * (e.clientY - start.y));
+      // the CSS cap still applies, so the window never outgrows the screen
+      root.style.setProperty('--W', `min(${w}px, 100% - 2 * var(--pad))`);
+      root.style.setProperty('--H', `min(${h}px, 100svh - 2 * var(--pad))`);
+      if (start.anchor) {
+        const drift = start.anchor.getBoundingClientRect().top - frame.getBoundingClientRect().top - start.offset;
+        window.scrollBy({ top: drift, behavior: 'instant' });
+      }
+    });
+    const stop = () => {
+      if (!start) return;
+      start = null;
+      grip.classList.remove('dragging');
+      window.dispatchEvent(new Event('resize')); // re-check the input line
+    };
+    grip.addEventListener('pointerup', stop);
+    grip.addEventListener('pointercancel', stop);
+    grip.addEventListener('dblclick', () => {
+      root.style.removeProperty('--W');
+      root.style.removeProperty('--H');
+      window.dispatchEvent(new Event('resize'));
+    });
+  }
+
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
   // Terminal input line: types the next section's command, and "enters" it

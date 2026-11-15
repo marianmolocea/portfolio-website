@@ -13,13 +13,22 @@ A style that fits: Swiss-style minimalism. That means a grid, plenty of empty sp
 strong contrast, a clear size hierarchy, and a single accent colour. No gradients, no drop shadows unless they
 do a job, no ornaments.
 
+Exception chosen by the owner: inside the terminal window the page uses the Dracula theme (Alucard, its light
+variant, for the light theme) the way a real zsh prompt would. Coloured prompt segments, command names in
+green, arguments in yellow, markdown markers in pink, headings and labels in theme colours, and a thin
+pink-purple-cyan gradient underline under each executed command. Body paragraphs stay in the plain text
+colour. The window background is 90% opaque, so the wallpaper shows faintly through, with no blur.
+
 ## Banned looks
 
 - The blue-to-purple gradient look (hero gradients, gradient text, glowing purple buttons). It reads as a
-  template. No gradient fills on text or large areas at all. One exception, chosen by the owner: the
-  static Big Sur-style wave wallpaper on the desktop around the terminal window. It never sits behind text.
+  template. No gradient fills on text or large areas at all. Two exceptions, chosen by the owner: the
+  static Big Sur-style wave wallpaper on the desktop around the terminal window (it shows behind text only
+  through the 90% window background), and the thin underline under executed commands.
 - Glassmorphism, neon glow on text, soft "aurora" colour blobs.
-- More than one accent colour.
+- More than one accent colour for links, the focus ring and hover states. The Dracula syntax colours inside
+  the terminal are not accents; keep them to short labels, never paragraphs.
+- Background blur behind the translucent window.
 
 ## Colour
 

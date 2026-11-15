@@ -1,20 +1,25 @@
-/* Iceberg dark is the default; Iceberg light applies only when picked with the toggle. */
+/* Dracula is the default; Alucard (Dracula's light variant) applies only when picked with the toggle. */
 :root {
   color-scheme: dark;
   --desk: #1b1a55;        /* the desktop around the window; shown until the wallpaper loads */
   --wallpaper: url(/assets/wallpaper-dark.svg);
-  --bg: #161821;          /* terminal */
-  --bar: #1e2132;         /* title bar */
-  --text: #c6c8d1;
-  --muted: #8b90a7;
-  --accent: #84a0c6;
-  --line: #2e3244;
-  --rim: #3a3f56;         /* 1px edge of the window */
+  --bg: #282a36;          /* terminal */
+  --bg-a: rgb(40 42 54 / .9);   /* terminal at 90%, so the wallpaper shows through */
+  --bar-a: rgb(33 34 44 / .9);  /* title bar at 90% */
+  --text: #f8f8f2;
+  --muted: #a0a8cd;
+  --accent: #bd93f9;
+  --line: #44475a;
+  --rim: #44475a;         /* 1px edge of the window */
   --shadow: rgba(8, 9, 14, .55);
   --light-r: #ff5f57; --light-y: #febc2e; --light-g: #28c840;
+  /* syntax colours inside the window */
+  --green: #50fa7b; --yellow: #f1fa8c; --pink: #ff79c6; --cyan: #8be9fd;
+  --seg-fg: #282a36;      /* text on the coloured prompt segments */
+  --seg-mid: #44475a;     /* middle (directory) segment */
   /* terminal colours, normal then bright, for the swatch row only */
-  --k0: #1e2132; --k1: #e27878; --k2: #b4be82; --k3: #e2a478; --k4: #84a0c6; --k5: #a093c7; --k6: #89b8c2; --k7: #c6c8d1;
-  --k8: #6b7089; --k9: #e98989; --k10: #c0ca8e; --k11: #e9b189; --k12: #91acd1; --k13: #ada0d3; --k14: #95c4ce; --k15: #d2d4de;
+  --k0: #21222c; --k1: #ff5555; --k2: #50fa7b; --k3: #f1fa8c; --k4: #bd93f9; --k5: #ff79c6; --k6: #8be9fd; --k7: #f8f8f2;
+  --k8: #6272a4; --k9: #ff6e6e; --k10: #69ff94; --k11: #ffffa5; --k12: #d6acff; --k13: #ff92df; --k14: #a4ffff; --k15: #ffffff;
 
   --s1: 4px; --s2: 8px; --s3: 16px; --s4: 24px; --s5: 32px; --s6: 48px; --s7: 64px; --s8: 96px;
   --mono: ui-monospace, "SF Mono", Menlo, "Cascadia Mono", Consolas, "DejaVu Sans Mono", monospace;
@@ -36,9 +41,13 @@
 
 :root[data-theme="light"] {
   color-scheme: light;
-  --desk: #7fb0f2; --wallpaper: url(/assets/wallpaper-light.svg); --bg: #e8e9ec; --bar: #dcdfe7; --text: #33374c; --muted: #575c75;
-  --accent: #2d539e; --line: #cbcfda; --rim: #b3b8c7; --shadow: rgba(33, 37, 60, .22);  --k0: #dcdfe7; --k1: #cc517a; --k2: #668e3d; --k3: #c57339; --k4: #2d539e; --k5: #7759b4; --k6: #3f83a6; --k7: #33374c;
-  --k8: #8389a3; --k9: #cc3768; --k10: #598030; --k11: #b6662d; --k12: #22478e; --k13: #6845ad; --k14: #327698; --k15: #262a3f;
+  --desk: #7fb0f2; --wallpaper: url(/assets/wallpaper-light.svg);
+  --bg: #fffbeb; --bg-a: rgb(255 251 235 / .9); --bar-a: rgb(239 234 212 / .9);
+  --text: #1f1f1f; --muted: #635d44; --accent: #644ac9; --line: #dcd5b8; --rim: #c9c1a0; --shadow: rgba(33, 37, 60, .22);
+  --green: #14710a; --yellow: #75610f; --pink: #a3144d; --cyan: #036a96;
+  --seg-fg: #fffbeb; --seg-mid: #6c664b;
+  --k0: #1f1f1f; --k1: #cb3a2a; --k2: #14710a; --k3: #846e15; --k4: #644ac9; --k5: #a3144d; --k6: #036a96; --k7: #fffbeb;
+  --k8: #6c664b; --k9: #d74c3d; --k10: #198d0c; --k11: #9e841a; --k12: #7862d0; --k13: #bf185a; --k14: #047fb4; --k15: #ffffff;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -56,12 +65,20 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background: var(--bg-a);
   color: var(--text);
   font: 400 1rem/1.6 var(--mono);
   -webkit-font-smoothing: antialiased;
 }
 @media (min-width: 900px) { body { font-size: 1.0625rem; } }
+/* The wallpaper again, fixed behind the content, so it shows faintly through the window. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: var(--desk) var(--wallpaper) center / cover no-repeat;
+}
 
 h1, h2, h3, p, ul, dl, dd { margin: 0; padding: 0; }
 h1, h2, h3 { font-size: inherit; }
@@ -116,7 +133,7 @@ ul { list-style: none; }
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 0 var(--s2) 0 var(--s3);
-  background: var(--bar);
+  background: linear-gradient(var(--bar-a) 0 0), var(--desk) var(--wallpaper) center / cover no-repeat fixed;
   border-bottom: 1px solid var(--line);
   border-radius: var(--radius) var(--radius) 0 0;
 }
@@ -165,7 +182,7 @@ ul { list-style: none; }
   z-index: 12;
   padding: 0 var(--inner);
   line-height: calc(var(--bar-h) - 1px);
-  background: var(--bg);
+  background: linear-gradient(var(--bg-a) 0 0), var(--desk) var(--wallpaper) center / cover no-repeat fixed;
   border-top: 1px solid var(--line);
   border-radius: 0 0 var(--radius) var(--radius);
   white-space: pre;
@@ -198,10 +215,30 @@ a {
 a:hover { text-decoration-thickness: 3px; text-underline-offset: .14em; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
 
-/* prompt line */
+/* prompt line: coloured segments with chevron edges, then the command */
 .ps { margin-bottom: var(--s3); white-space: pre-wrap; }
-.who { color: var(--accent); font-weight: 700; }
-.dir, .md { color: var(--muted); font-weight: 400; }
+.ps1 { white-space: nowrap; }
+.who, .dir, .git {
+  display: inline-block;
+  padding: 0 1.1ch 0 1.4ch;
+  line-height: 1.6;
+  color: var(--seg-fg);
+  font-weight: 700;
+  clip-path: polygon(0 0, calc(100% - .5em) 0, 100% 50%, calc(100% - .5em) 100%, 0 100%, .5em 50%);
+}
+.who { background: var(--accent); padding-left: 1ch; clip-path: polygon(0 0, calc(100% - .5em) 0, 100% 50%, calc(100% - .5em) 100%, 0 100%); }
+.dir { background: var(--seg-mid); color: var(--text); font-weight: 400; }
+:root[data-theme="light"] .dir { color: var(--seg-fg); }
+.git { background: var(--cyan); }
+.arrow { color: var(--pink); font-weight: 700; }
+.bin { color: var(--green); font-weight: 700; }
+.arg { color: var(--yellow); }
+/* executed commands get a thin gradient underline */
+.ps .cmd {
+  padding-bottom: 3px;
+  background: linear-gradient(90deg, var(--pink), var(--accent), var(--cyan)) 0 100% / 100% 2px no-repeat;
+}
+.md { color: var(--pink); font-weight: 400; }
 
 /* ---------- hero: neofetch ---------- */
 .hero {
@@ -237,6 +274,7 @@ a:hover { text-decoration-thickness: 3px; text-underline-offset: .14em; }
   margin-bottom: var(--s4);
 }
 .host span { color: var(--accent); font-weight: 700; }
+.host span + span { color: var(--pink); }
 .host .dash { color: var(--muted); font-weight: 400; }
 .specs { margin-top: var(--s2); max-width: 68ch; }
 .specs dt, .specs dd { display: inline; }
@@ -247,7 +285,7 @@ a:hover { text-decoration-thickness: 3px; text-underline-offset: .14em; }
   .specs dt, .specs dd { display: block; }
   .specs dd::before { content: none; }
 }
-.specs dt { color: var(--accent); font-weight: 700; }
+.specs dt { color: var(--cyan); font-weight: 700; }
 .specs dt::after { content: ":"; color: var(--text); font-weight: 400; }
 .swatches {
   display: grid;
@@ -283,7 +321,7 @@ a:hover { text-decoration-thickness: 3px; text-underline-offset: .14em; }
   border-top: 1px dashed var(--line);
 }
 .block { padding: var(--s5) 0 var(--s6); }
-h2 { font-size: 1.125rem; font-weight: 700; margin-bottom: var(--s3); }
+h2 { font-size: 1.125rem; font-weight: 700; color: var(--accent); margin-bottom: var(--s3); }
 h3 { font-weight: 700; margin-bottom: var(--s1); }
 
 .prose { max-width: 68ch; }
@@ -293,8 +331,8 @@ h3 { font-weight: 700; margin-bottom: var(--s1); }
 
 .tools div { padding: var(--s1) 0; }
 @media (min-width: 700px) { .tools div { display: grid; grid-template-columns: 16ch 1fr; gap: 2ch; } }
-.tools dt { font-weight: 700; }
-.tools dt::before { content: "- "; color: var(--muted); font-weight: 400; }
+.tools dt { color: var(--green); font-weight: 700; }
+.tools dt::before { content: "- "; color: var(--pink); font-weight: 400; }
 .tools dd { padding-left: 2ch; }
 @media (min-width: 700px) { .tools dd { padding-left: 0; } }
 

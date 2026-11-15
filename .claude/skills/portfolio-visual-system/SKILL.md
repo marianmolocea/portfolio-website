@@ -6,19 +6,29 @@ description: Colour, typography, spacing and layout rules for the one-page portf
 # Portfolio visual system
 
 The site is a single static page for a fullstack engineer. The look should be calm, sharp and easy to read,
-with one small playful element (the reactive background, covered in the motion skill). Optimise for:
+with one small playful element (the terminal input line, covered in the motion skill). Optimise for:
 readability first, a clear personality second, decoration last.
 
 A style that fits: Swiss-style minimalism. That means a grid, plenty of empty space, one sans-serif family,
 strong contrast, a clear size hierarchy, and a single accent colour. No gradients, no drop shadows unless they
 do a job, no ornaments.
 
+Exception chosen by the owner: inside the terminal window the page uses the Dracula theme (Alucard, its light
+variant, for the light theme) the way a real zsh prompt would. Coloured prompt segments, command names in
+green, arguments in yellow, markdown markers in pink, headings and labels in theme colours, and a thin
+pink-purple-cyan gradient underline under each executed command. Body paragraphs stay in the plain text
+colour. The window background is 90% opaque, so the wallpaper shows faintly through, with no blur.
+
 ## Banned looks
 
 - The blue-to-purple gradient look (hero gradients, gradient text, glowing purple buttons). It reads as a
-  template. No gradient fills on text or large areas at all.
+  template. No gradient fills on text or large areas at all. Two exceptions, chosen by the owner: the
+  static Big Sur-style wave wallpaper on the desktop around the terminal window (it shows behind text only
+  through the 90% window background), and the thin underline under executed commands.
 - Glassmorphism, neon glow on text, soft "aurora" colour blobs.
-- More than one accent colour.
+- More than one accent colour for links, the focus ring and hover states. The Dracula syntax colours inside
+  the terminal are not accents; keep them to short labels, never paragraphs.
+- Background blur behind the translucent window.
 
 ## Colour
 
@@ -33,7 +43,6 @@ do a job, no ornaments.
    - **muted** — secondary text (dates, captions, small labels)
    - **accent** — links, focus ring, the one or two things that should catch the eye
    - **line** — hairline borders and dividers
-   The canvas background draws in a low-opacity version of text or accent; it does not get its own colour.
 3. Avoid pure #000 on pure #FFF (and the reverse). A near-black and an off-white are easier on the eyes and
    still give huge contrast.
 4. On a dark background, pick a slightly desaturated accent. Fully saturated colours vibrate on black.
@@ -50,13 +59,11 @@ do a job, no ornaments.
 | Accent used as link text | 4.5 : 1 | — |
 | Focus ring and icon outlines against background | 3 : 1 | — |
 
-Two traps to check every time:
+One trap to check every time:
 - **Links told apart only by colour.** If a link is not underlined, its colour must differ from the
   surrounding body text by at least 3 : 1. Most accent/text pairs fail this (mint on near-black body text is
   around 1.3 : 1). Simplest rule: underline links in body copy; standalone nav and icon links can rely on
   position and label.
-- **Text over the canvas.** Measure contrast against the brightest the background can get under the text,
-  not the empty background colour.
 
 A contrast checker (browser dev tools show the ratio in the colour picker; online WCAG checkers do the same)
 answers "does this pair pass?". Use it on every pair in the table, in the final colours, before shipping.

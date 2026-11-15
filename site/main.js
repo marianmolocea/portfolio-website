@@ -5,11 +5,10 @@
   if (year) year.textContent = new Date().getFullYear();
 
   // Theme toggle. The head script applies a saved choice before first paint;
-  // with no saved choice the device setting decides (in CSS).
+  // with no saved choice the page is dark (in CSS).
   const root = document.documentElement;
-  const darkQuery = matchMedia('(prefers-color-scheme: dark)');
   const toggle = document.querySelector('.theme');
-  const isDark = () => (root.dataset.theme ? root.dataset.theme === 'dark' : darkQuery.matches);
+  const isDark = () => root.dataset.theme !== 'light';
   let onThemeChange = () => {};
   function syncTheme() {
     if (toggle) toggle.setAttribute('aria-pressed', String(isDark()));
@@ -23,7 +22,6 @@
       syncTheme();
     });
   }
-  darkQuery.addEventListener('change', syncTheme);
   syncTheme();
 
   const canvas = document.querySelector('.field');

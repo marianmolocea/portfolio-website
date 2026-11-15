@@ -12,7 +12,7 @@ Every item below is meant to pass or fail, not to be "mostly fine".
 ## Accessibility
 
 - **Contrast:** body and muted text at least 4.5:1 against the background, large text at least 3:1, focus
-  ring and icon outlines at least 3:1. Measure text that sits over the canvas at the canvas's brightest.
+  ring and icon outlines at least 3:1.
 - **Focus visible:** every link and button shows a clear focus outline when reached by keyboard. Nothing
   sticky covers the focused item.
 - **Keyboard:** the whole page works with Tab, Shift+Tab and Enter. Tab order follows the visual order. No
@@ -20,12 +20,13 @@ Every item below is meant to pass or fail, not to be "mostly fine".
 - **Landmarks:** one header, one main, one footer; nav only if there is a nav. Each section has a heading.
   One h1 (the owner's name), then h2 per section, no skipped levels.
 - **Language:** the html element declares the page language.
-- **Images:** a meaningful image (a portrait) has short descriptive alt text; decorative images and the
-  background canvas are hidden from assistive technology (empty alt, or marked hidden).
+- **Images:** a meaningful image (a portrait) has short descriptive alt text; decorative images and
+  decorative art (the logo, the block-letter name, the window chrome) are hidden from assistive technology (empty alt, or marked hidden).
 - **Icon links:** GitHub and LinkedIn icons have an accessible name ("GitHub", "LinkedIn"); the SVG itself
   is hidden from screen readers. External links do not need to open new tabs; if they do, say so.
 - **Zoom:** the viewport meta allows zoom. At 200% zoom nothing overlaps or gets cut off.
-- **Motion:** with reduced motion turned on, the background is static and transitions are near zero.
+- **Motion:** with reduced motion turned on, the input line shows commands without typing, the caret does
+  not blink, and transitions are near zero.
 - **Colour is never the only signal:** links in body text are underlined.
 
 Tools available: the accessibility panel in browser dev tools answers "what does a screen reader see here?";
@@ -84,7 +85,7 @@ look like when shared?".
 - Tap targets at least 44 by 44px with space between them (GitHub and LinkedIn icons especially).
 - Hero fits the first screen without hiding the hint that there is more below; uses dynamic viewport height
   so mobile toolbars do not cut it off.
-- Background runs in its touch mode (drift only, fewer points) and does not block scrolling.
+- Scrolling stays native; nothing blocks or hijacks touch scrolling.
 - Check landscape on a phone, too.
 
 Tools available: device emulation in dev tools answers "how does it lay out at this width?"; a real phone
@@ -96,21 +97,21 @@ Content and owner rules
 - [ ] No email address anywhere: not in text, links, meta, structured data, or the OG image.
 - [ ] No contact form. No projects section.
 - [ ] Only external links are GitHub and LinkedIn, and both URLs are correct.
-- [ ] No scroll-reveal effects, no bouncy or scale-up hovers, no blue–purple gradient.
+- [ ] No scroll-reveal effects, no bouncy or scale-up hovers, no blue–purple gradient (the static desktop wallpaper is the one exception).
 - [ ] Copy passes the copywriting skill's checklist.
 
 Accessibility
-- [ ] Every text pair passes its contrast target, including over the canvas.
+- [ ] Every text pair passes its contrast target.
 - [ ] Full keyboard pass: every interactive element reachable, focus always visible.
 - [ ] One h1, ordered headings, header/main/footer landmarks, page language set.
-- [ ] Reduced motion on: background static, no smooth scroll.
+- [ ] Reduced motion on: no typing, no caret blink, no smooth scroll.
 - [ ] Automated accessibility check: zero errors.
 
 Performance
 - [ ] Lighthouse mobile performance 95+ (and accessibility, best practices, SEO each 95+).
 - [ ] First-visit transfer under 150 KB; zero third-party requests.
 - [ ] At most one font file; CLS under 0.1.
-- [ ] Background loop stops when the tab is hidden; frame time stays low with CPU throttling.
+- [ ] Scrolling stays smooth with CPU throttling; the input line's scroll check runs at most once per frame.
 - [ ] Page fully readable with JavaScript disabled.
 
 Meta and mobile

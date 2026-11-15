@@ -6,7 +6,7 @@
   <title>Marian Molocea | Fullstack Software Engineer</title>
   <meta name="description" content="Fullstack software engineer with 6 years of experience in React, Go, Kubernetes and AWS. I build apps and software that controls simulation models.">
   <link rel="canonical" href="https://marianmolocea.com/">
-  <meta name="theme-color" content="#141312">
+  <meta name="theme-color" content="#1b1a55">
   <script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
 
   <meta property="og:type" content="website">
@@ -30,84 +30,110 @@
   </script>
 </head>
 <body id="top">
-  <canvas class="field" aria-hidden="true"></canvas>
+  <!-- The desktop: wallpaper with a window-shaped hole. The page scrolls
+       normally underneath, so the content appears to scroll inside the window. -->
+  <div class="desk" aria-hidden="true"></div>
+  <div class="frame" aria-hidden="true"></div>
 
-  <header class="bar">
-    <a class="mark" href="#top" aria-label="Marian Molocea, back to top">
-      <svg viewBox="0 0 40 40" width="36" height="36" aria-hidden="true">
-        <path d="M13.1 2h13.8L38 13.1v13.8L26.9 38H13.1L2 26.9V13.1Z" />
-        <path d="M13.1 2h13.8L38 13.1v13.8L26.9 38H13.1L2 26.9V13.1Z" transform="rotate(22.5 20 20)" />
-        <path class="mm" d="M10.5 26V14l4.25 7.5L19 14v12M21 26V14l4.25 7.5L29.5 14v12" />
-      </svg>
-    </a>
+  <header class="titlebar">
+    <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+    <p class="title">marian@molocea — zsh</p>
     <div class="bar-end">
-      <p class="readout" aria-hidden="true" hidden><span>x</span> <output id="rx">0.00</output> <span>y</span> <output id="ry">0.00</output></p>
       <button class="theme" type="button" aria-label="Dark theme" aria-pressed="false" hidden>
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17Z"/></svg>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17Z"/></svg>
       </button>
     </div>
   </header>
 
-  <main>
-    <section class="hero" aria-labelledby="name">
-      <p class="role">Fullstack software engineer</p>
-      <h1 id="name">Marian <br>Molocea<span class="dot">.</span></h1>
-      <p class="intro">I build the software that controls simulation models, from the screen you click to the servers behind it.</p>
-      <p class="hint" hidden>Click the background to poke the simulation.</p>
-    </section>
+  <div class="screen">
+    <main>
+      <section class="hero" aria-labelledby="name">
+        <p class="ps" aria-hidden="true"><span class="ps1"><span class="who">marian@molocea</span> <span class="dir">~</span> %</span> <span class="cmd">neofetch</span></p>
+        <div class="fetch">
+          <svg class="logo" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M13.1 2h13.8L38 13.1v13.8L26.9 38H13.1L2 26.9V13.1Z" />
+            <path d="M13.1 2h13.8L38 13.1v13.8L26.9 38H13.1L2 26.9V13.1Z" transform="rotate(22.5 20 20)" />
+            <path class="mm" d="M10 26V14l4 7.5L18 14v12M22 26V14l4 7.5L30 14v12" />
+          </svg>
+          <div class="info">
+            <h1 id="name"><span class="sr-only">Marian Molocea</span><span class="art" aria-hidden="true">███╗   ███╗ █████╗ ██████╗ ██╗ █████╗ ███╗   ██╗
+████╗ ████║██╔══██╗██╔══██╗██║██╔══██╗████╗  ██║
+██╔████╔██║███████║██████╔╝██║███████║██╔██╗ ██║
+██║╚██╔╝██║██╔══██║██╔══██╗██║██╔══██║██║╚██╗██║
+██║ ╚═╝ ██║██║  ██║██║  ██║██║██║  ██║██║ ╚████║
+╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
 
-    <section class="block" aria-labelledby="about">
-      <div class="label"><span class="num">01</span><h2 id="about">About</h2></div>
-      <div class="content about">
+███╗   ███╗ ██████╗ ██╗      ██████╗  ██████╗███████╗ █████╗
+████╗ ████║██╔═══██╗██║     ██╔═══██╗██╔════╝██╔════╝██╔══██╗
+██╔████╔██║██║   ██║██║     ██║   ██║██║     █████╗  ███████║
+██║╚██╔╝██║██║   ██║██║     ██║   ██║██║     ██╔══╝  ██╔══██║
+██║ ╚═╝ ██║╚██████╔╝███████╗╚██████╔╝╚██████╗███████╗██║  ██║
+╚═╝     ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝╚══════╝╚═╝  ╚═╝</span></h1>
+            <p class="host" aria-hidden="true"><span>marian</span>@<span>molocea</span><br><span class="dash">--------------</span></p>
+            <dl class="specs">
+              <div><dt>Role</dt><dd>Fullstack software engineer</dd></div>
+              <div><dt>Builds</dt><dd>The software that controls simulation models, from the screen you click to the servers behind it.</dd></div>
+              <div><dt>Stack</dt><dd>React, Go, Kubernetes, AWS</dd></div>
+              <div><dt>Experience</dt><dd>6 years</dd></div>
+            </dl>
+            <p class="swatches" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></p>          </div>
+        </div>
+      </section>
+
+      <section class="block" aria-labelledby="about">
+        <p class="ps" aria-hidden="true"><span class="ps1"><span class="who">marian@molocea</span> <span class="dir">~</span> %</span> <span class="cmd">cat about.md</span></p>
+        <h2 id="about"><span class="md" aria-hidden="true">## </span>About</h2>
         <div class="prose">
           <p>I've been building software for six years. I use React and JavaScript on the front end, Go on the back end, and Kubernetes and AWS underneath.</p>
           <p>These days I work closely with a team that builds simulation models. They build the models. I build the software people use to set up, run and control them.</p>
         </div>
-        <img class="portrait" src="/assets/marian-320.webp" srcset="/assets/marian-320.webp 320w, /assets/marian-640.webp 640w" sizes="(min-width: 900px) 280px, 240px" width="320" height="320" alt="Marian Molocea standing outside, looking off to the side.">
-      </div>
-    </section>
+      </section>
 
-    <section class="block" aria-labelledby="work">
-      <div class="label"><span class="num">02</span><h2 id="work">What I do</h2></div>
-      <ul class="content work">
-        <li>
-          <h3>Apps, start to finish</h3>
-          <p>I build whole applications from scratch. Then I connect them to the systems the company already runs on.</p>
-        </li>
-        <li>
-          <h3>Software for simulation models</h3>
-          <p>I work side by side with the model team. When they need a new tool for their models, I build it.</p>
-        </li>
-        <li>
-          <h3>Faster, lighter apps</h3>
-          <p>I find what slows a large app down and fix it, so it runs quicker and uses less. Same app, less waiting.</p>
-        </li>
-      </ul>
-    </section>
+      <section class="block" aria-labelledby="work">
+        <p class="ps" aria-hidden="true"><span class="ps1"><span class="who">marian@molocea</span> <span class="dir">~</span> %</span> <span class="cmd">cat what-i-do.md</span></p>
+        <h2 id="work"><span class="md" aria-hidden="true">## </span>What I do</h2>
+        <ul class="work">
+          <li>
+            <h3><span class="md" aria-hidden="true">### </span>Apps, start to finish</h3>
+            <p>I build whole applications from scratch. Then I connect them to the systems the company already runs on.</p>
+          </li>
+          <li>
+            <h3><span class="md" aria-hidden="true">### </span>Software for simulation models</h3>
+            <p>I work side by side with the model team. When they need a new tool for their models, I build it.</p>
+          </li>
+          <li>
+            <h3><span class="md" aria-hidden="true">### </span>Faster, lighter apps</h3>
+            <p>I find what slows a large app down and fix it, so it runs quicker and uses less. Same app, less waiting.</p>
+          </li>
+        </ul>
+      </section>
 
-    <section class="block" aria-labelledby="tools">
-      <div class="label"><span class="num">03</span><h2 id="tools">Tools I use</h2></div>
-      <dl class="content tools">
-        <div><dt>Frontend</dt><dd>React, JavaScript, TypeScript, HTML, CSS</dd></div>
-        <div><dt>Backend</dt><dd>Go, Node.js, REST APIs, SQL databases</dd></div>
-        <div><dt>Infrastructure</dt><dd>Kubernetes, AWS, Docker, Git, CI/CD pipelines</dd></div>
-      </dl>
-    </section>
+      <section class="block" aria-labelledby="tools">
+        <p class="ps" aria-hidden="true"><span class="ps1"><span class="who">marian@molocea</span> <span class="dir">~</span> %</span> <span class="cmd">cat tools.md</span></p>
+        <h2 id="tools"><span class="md" aria-hidden="true">## </span>Tools I use</h2>
+        <dl class="tools">
+          <div><dt>Frontend</dt><dd>React, JavaScript, TypeScript, HTML, CSS</dd></div>
+          <div><dt>Backend</dt><dd>Go, Node.js, REST APIs, SQL databases</dd></div>
+          <div><dt>Infrastructure</dt><dd>Kubernetes, AWS, Docker, Git, CI/CD pipelines</dd></div>
+        </dl>
+      </section>
 
-    <section class="block" aria-labelledby="find">
-      <div class="label"><span class="num">04</span><h2 id="find">Find me</h2></div>
-      <div class="content">
-        <p class="prose">Want to talk shop? Say hi on GitHub or LinkedIn.</p>
+      <section class="block" aria-labelledby="find">
+        <p class="ps" aria-hidden="true"><span class="ps1"><span class="who">marian@molocea</span> <span class="dir">~</span> %</span> <span class="cmd">cat find-me.md</span></p>
+        <h2 id="find"><span class="md" aria-hidden="true">## </span>Find me</h2>
+        <p class="prose">Say hi on GitHub or LinkedIn.</p>
         <ul class="links">
           <li><a href="https://github.com/marianmolocea">GitHub <span aria-hidden="true">↗</span></a></li>
           <li><a href="https://www.linkedin.com/in/marian-molocea/">LinkedIn <span aria-hidden="true">↗</span></a></li>
         </ul>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <footer class="foot">
-    <p>© <span id="year">2026</span> Marian Molocea. Thanks for scrolling this far.</p>
-  </footer>
+    <footer class="foot">
+      <p>© <span id="year">2026</span> Marian Molocea. Thanks for scrolling this far.</p>
+    </footer>
+  </div>
+
+  <div class="input" aria-hidden="true"><span class="ps1"><span class="who">marian@molocea</span> <span class="dir">~</span> %</span> <span class="typed"></span><span class="caret"></span></div>
 </body>
 </html>

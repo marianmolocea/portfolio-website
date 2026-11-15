@@ -17,7 +17,7 @@ ratios computed from the hex values (checker verified against known pairs: black
 - Mint vs body text is only about 1.3 : 1, so links in paragraphs must be underlined.
 - Dark text on a mint fill is 12.5 : 1, so a mint button or tag with background-coloured text works.
 - Feel: terminal, "run" green, technical. Close to the dark developer-tool palettes in the source research.
-  Risk: very common on developer sites; the reactive background is what keeps it from looking generic.
+  Risk: very common on developer sites.
 
 ## 2. White + red (light)
 

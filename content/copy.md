@@ -33,7 +33,7 @@ I find what slows a large app down and fix it, so it runs quicker and uses less.
 
 ## 5. Find me
 
-Want to talk shop? Say hi on GitHub or LinkedIn.
+Say hi on GitHub or LinkedIn.
 
 - [GitHub](https://github.com/marianmolocea)
 - [LinkedIn](https://www.linkedin.com/in/marian-molocea/)

@@ -1,7 +1,13 @@
-// Footer year, theme toggle and the terminal input line.
+// Footer year, years of experience, theme toggle and the terminal input line.
 (() => {
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
+  const years = new Date().getFullYear() - 2020; // started in 2020
+  const exp = document.getElementById('exp');
+  if (exp) exp.textContent = years;
+  const expWords = document.getElementById('exp-words');
+  const words = ['six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'];
+  if (expWords) expWords.textContent = words[years - 6] || years;
 
   // Theme toggle. The head script applies a saved choice before first paint;
   // with no saved choice the page is dark (in CSS).

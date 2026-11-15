@@ -3,8 +3,7 @@
   color-scheme: dark;
   --desk: #1b1a55;        /* the desktop around the window; shown until the wallpaper loads */
   --wallpaper: url(/assets/wallpaper-dark.svg);
-  --bg: #282a36;          /* terminal */
-  --bg-a: rgb(40 42 54 / .9);   /* terminal at 90%, so the wallpaper shows through */
+  --bg-a: rgb(40 42 54 / .9);   /* terminal (#282a36) at 90%, so the wallpaper shows through */
   --bar-a: rgb(33 34 44 / .9);  /* title bar at 90% */
   --text: #f8f8f2;
   --muted: #a0a8cd;
@@ -42,7 +41,7 @@
 :root[data-theme="light"] {
   color-scheme: light;
   --desk: #7fb0f2; --wallpaper: url(/assets/wallpaper-light.svg);
-  --bg: #fffbeb; --bg-a: rgb(255 251 235 / .9); --bar-a: rgb(239 234 212 / .9);
+  --bg-a: rgb(255 251 235 / .9); --bar-a: rgb(239 234 212 / .9);
   --text: #1f1f1f; --muted: #635d44; --accent: #644ac9; --line: #dcd5b8; --rim: #c9c1a0; --shadow: rgba(33, 37, 60, .22);
   --green: #14710a; --yellow: #75610f; --pink: #a3144d; --cyan: #036a96;
   --seg-fg: #fffbeb; --seg-mid: #6c664b;

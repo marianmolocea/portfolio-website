@@ -6,7 +6,9 @@
   <title>Marian Molocea | Fullstack Software Engineer</title>
   <meta name="description" content="Fullstack software engineer with 6 years of experience in React, Go, Kubernetes and AWS. I build apps and software that controls simulation models.">
   <link rel="canonical" href="https://marianmolocea.com/">
-  <meta name="theme-color" content="#F6F4EF">
+  <meta name="theme-color" content="#F6F4EF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141312" media="(prefers-color-scheme: dark)">
+  <script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://marianmolocea.com/">
@@ -39,7 +41,12 @@
         <path class="mm" d="M10.5 26V14l4.25 7.5L19 14v12M21 26V14l4.25 7.5L29.5 14v12" />
       </svg>
     </a>
-    <p class="readout" aria-hidden="true" hidden><span>x</span> <output id="rx">0.00</output> <span>y</span> <output id="ry">0.00</output></p>
+    <div class="bar-end">
+      <p class="readout" aria-hidden="true" hidden><span>x</span> <output id="rx">0.00</output> <span>y</span> <output id="ry">0.00</output></p>
+      <button class="theme" type="button" aria-label="Dark theme" aria-pressed="false" hidden>
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17Z"/></svg>
+      </button>
+    </div>
   </header>
 
   <main>

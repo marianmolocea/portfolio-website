@@ -4,6 +4,28 @@
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
+  // Theme toggle. The head script applies a saved choice before first paint;
+  // with no saved choice the device setting decides (in CSS).
+  const root = document.documentElement;
+  const darkQuery = matchMedia('(prefers-color-scheme: dark)');
+  const toggle = document.querySelector('.theme');
+  const isDark = () => (root.dataset.theme ? root.dataset.theme === 'dark' : darkQuery.matches);
+  let onThemeChange = () => {};
+  function syncTheme() {
+    if (toggle) toggle.setAttribute('aria-pressed', String(isDark()));
+    onThemeChange();
+  }
+  if (toggle) {
+    toggle.hidden = false;
+    toggle.addEventListener('click', () => {
+      root.dataset.theme = isDark() ? 'light' : 'dark';
+      try { localStorage.setItem('theme', root.dataset.theme); } catch (e) { /* storage blocked */ }
+      syncTheme();
+    });
+  }
+  darkQuery.addEventListener('change', syncTheme);
+  syncTheme();
+
   const canvas = document.querySelector('.field');
   const ctx = canvas && canvas.getContext('2d');
   if (!ctx) return;
@@ -17,7 +39,15 @@
 
   // Colours and strengths for three heat levels: idle ink, warm red, hot red.
   // Red stays at or below 18% opacity so text on top keeps its contrast.
-  const STYLES = ['rgba(22,22,22,.11)', 'rgba(224,48,30,.12)', 'rgba(224,48,30,.18)'];
+  // Colours come from the theme's CSS custom properties.
+  let STYLES = [];
+  function readColours() {
+    const css = getComputedStyle(root);
+    const ink = css.getPropertyValue('--field-ink').trim();
+    const red = css.getPropertyValue('--field-red').trim();
+    STYLES = [`rgba(${ink},${css.getPropertyValue('--field-ink-a').trim()})`, `rgba(${red},.12)`, `rgba(${red},.18)`];
+  }
+  readColours();
   const RADIUS = 170;
   const RIPPLE_SPEED = 0.55; // px per ms
   const RIPPLE_LIFE = coarse ? 900 : 1600; // ms
@@ -187,6 +217,11 @@
   window.addEventListener('blur', () => { blurred = true; inside = false; update(); });
   window.addEventListener('focus', () => { blurred = false; update(); });
   reducedMotion.addEventListener('change', update);
+
+  onThemeChange = () => {
+    readColours();
+    if (!running) draw(performance.now());
+  };
 
   if (hint && coarse) hint.textContent = 'Tap the background to poke the simulation.';
   resize();

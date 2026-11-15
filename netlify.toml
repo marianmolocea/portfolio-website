@@ -1,4 +1,6 @@
 # Static site: no build step. Only the site/ folder is published.
+# The sha256 in script-src is the inline theme script in index.html's head;
+# recompute it if that script changes.
 [build]
   publish = "site"
   command = "echo 'No build step'"
@@ -32,7 +34,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'"
+    Content-Security-Policy = "default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self' 'sha256-SPCKtJb7vbkE0oGUlUkbSW9lKlfV2+hrafPs14RM2sA='; base-uri 'self'; form-action 'none'; frame-ancestors 'none'"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 

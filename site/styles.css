@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light;
   --bg: #F6F4EF;
   --surface: #ECE9E2;
   --text: #161616;
@@ -6,12 +7,31 @@
   --accent: #E0301E;      /* marks, focus ring, canvas: never text */
   --accent-text: #B8200F; /* links and red text */
   --line: #DEDAD1;
+  --field-ink: 22, 22, 22;  /* canvas colours, read by main.js */
+  --field-ink-a: .11;
+  --field-red: 224, 48, 30;
 
   --s1: 4px; --s2: 8px; --s3: 16px; --s4: 24px; --s5: 32px; --s6: 48px; --s7: 64px; --s8: 96px;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
   --gutter: clamp(16px, 5vw, 64px);
   --ease: cubic-bezier(.2, .7, .3, 1);
+}
+
+/* Dark theme: follows the device unless the visitor picked a theme with the toggle. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #141312; --surface: #1D1C1A; --text: #EDEAE3; --muted: #A3A098;
+    --accent: #FF5A47; --accent-text: #FF7B6B; --line: #2E2C29;
+    --field-ink: 237, 234, 227; --field-ink-a: .10; --field-red: 255, 90, 71; --photo: brightness(.85);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #141312; --surface: #1D1C1A; --text: #EDEAE3; --muted: #A3A098;
+  --accent: #FF5A47; --accent-text: #FF7B6B; --line: #2E2C29;
+  --field-ink: 237, 234, 227; --field-ink-a: .10; --field-red: 255, 90, 71; --photo: brightness(.85);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -65,6 +85,22 @@ a:hover { text-decoration-thickness: 3px; text-underline-offset: .14em; }
 .mark svg { fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linejoin: round; }
 .mark .mm { stroke-width: 2; }
 .mark:hover, .mark:focus-visible { color: var(--accent); }
+.bar-end { display: flex; align-items: center; gap: var(--s3); }
+.theme {
+  display: inline-grid;
+  place-items: center;
+  width: 44px; height: 44px;
+  margin-right: -10px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text);
+  cursor: pointer;
+  transition: color 150ms var(--ease);
+}
+.theme:hover, .theme:focus-visible { color: var(--accent); }
+.theme svg { fill: currentColor; stroke: currentColor; stroke-width: 1.6; }
+.theme circle { fill: none; }
 .readout {
   font: 500 .8125rem/1 var(--mono);
   color: var(--muted);
@@ -133,7 +169,7 @@ h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; line-height: 1.15; l
 
 .about { display: grid; gap: var(--s5); align-items: start; }
 @media (min-width: 900px) { .about { grid-template-columns: 1fr 280px; gap: var(--s6); } }
-.portrait { display: block; width: 240px; max-width: 100%; height: auto; border: 1px solid var(--text); }
+.portrait { display: block; width: 240px; max-width: 100%; height: auto; border: 1px solid var(--text); filter: var(--photo, none); }
 @media (min-width: 900px) { .portrait { width: 280px; } }
 
 .work { display: grid; gap: var(--s5); }
